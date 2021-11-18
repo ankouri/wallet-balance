@@ -59,7 +59,6 @@ export default function MuiThemeProvider({ children }) {
         },
         typography: {
           fontFamily: "Maven Pro",
-          text:'', //CHANGE TEXT COLOR 
         },
       }),
     [mode]

@@ -13,8 +13,8 @@ export default function Layout() {
   return (
     <style.Wrapper>
       {
-        wallet.loading ?  <Loading style={{height:'600px'}}/>
-        :<>
+        wallet.loading ? <Loading/> : ''
+      }
         <TnxsInfo/>
       <Grid container spacing={1}>
         <Grid item md={8} xs={12}>
@@ -35,8 +35,7 @@ export default function Layout() {
       <style.Title component="h4">Token List :</style.Title>
       <Divider sx={{ mb: 2 }} />
       <TokensList />
-        </>
-      }
+
       
     </style.Wrapper>
   );

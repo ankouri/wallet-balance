@@ -9,7 +9,6 @@ export const walletsSlice = createSlice({
             erc20Assets:erc20Assets,
             wallettnxs:trnxs,
             nfts:[],
-            prices:[],
             loading:false,
         }
     },

@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { setData } from "../../redux/features/options";
 import { useMoralisWeb3Api } from "react-moralis";
 import { style } from './hero-style';
-
+import { erc20Assets, trnxs } from '../../constants';
 const blockchainList = [
   { name: "Ethereum Mainnet", symbol: "eth" },
   { name: "Ropsten (Eth Testnet)", symbol: "ropsten" },
@@ -21,8 +21,6 @@ const blockchainList = [
   { name: "Polygon (Matic) Mainnet", symbol: "matic" },
   { name: "Mumbai (Matic Testnet)", symbol: "mumbai" },
   { name: "Avalanche Mainnet", symbol: "avalanche" },
-  { name: "Local Dev Chain (Ganache)", symbol: "ganache" },
-  { name: "Local Dev Chain (Hardhat)", symbol: "hardhat" },
 ];
 export default function Hero() {
   const [chain, setChain] = React.useState("");
@@ -36,10 +34,9 @@ export default function Hero() {
       setData({
         chain: chain,
         address: address,
-        erc20Assets: [],
-        wallettnxs: [],
+        erc20Assets: erc20Assets,
+        wallettnxs: trnxs,
         nfts: [],
-        prices: [],
         loading: true,
       })
     );
@@ -77,7 +74,6 @@ export default function Hero() {
         erc20Assets: tokens,
         wallettnxs: tnxs,
         nfts: nfts,
-        prices: [],
         loading: false,
       })
     );
